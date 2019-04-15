@@ -5,7 +5,7 @@
 #include <malloc.h>
 
 /*
-	n     : integer containing number of characters (length) of text 
+    n     : integer containing number of characters (length) of text 
             in which patterns are to be searched
     text  : character array containing text in which patterns are to be searched
     num_patterns: integer containing #patterns to be searched in the text
@@ -19,7 +19,7 @@
             -----------------------------------------------------------------------------------
             | period(pattern[0]) | period(pattern[1]) | ... | period(pattern[num_patterns-1]) |
             -----------------------------------------------------------------------------------
-    pattern_set : array of character array containing patterns to be searched
+    pattern_set : array of character array containing patterns to be matched
             #elements in pattern_set = num_patterns
             -----------------------------------------------------------
             | pattern[0] | pattern[1] | ... | pattern[num_patterns-1] |
@@ -35,26 +35,26 @@ void read_data (
         char ***pattern_set);
 
 /*
-check correctess of Singular Vector Decomposition
+check correctess of periodic_pattern_matching
 Arguments:
-    match_countss : integer array containing number of match of each pattern in text
-           #elements in ocuurance_count = num_patterns
-            --------------------------------------------------------------------------------------------------
+    match_counts : integer array containing number of matches of each pattern in text
+           #elements in match_counts = num_patterns
+            -----------------------------------------------------------------------------------------
             | #matches(pattern[0]) | #matches(pattern[1]) | ... | #matches(pattern[num_patterns-1]) |
-            --------------------------------------------------------------------------------------------------
-    matches : 1D array of integers containg list of all match (start index of) of pattern_i in text
+            -----------------------------------------------------------------------------------------
+    matches : 1D array of integers containing list of all matches (start index of) of pattern_i in text
             consider index of text starting from 0 (not 1)
-            ----------------------------------------------------------------------------------------------------------------
+            -------------------------------------------------------------------------------------------------
             | match(pattern[0])[0] | match(pattern[0])[1] | ... | match(pattern[0])[#matches(pattern[0])-1] |
-            ----------------------------------------------------------------------------------------------------------------
+            -------------------------------------------------------------------------------------------------
             | match(pattern[1])[0] | match(pattern[1])[1] | ... | match(pattern[1])[#matches(pattern[1])-1] |
-            ----------------------------------------------------------------------------------------------------------------
-            | ... ... ... ... ...             | match(pattern[num_patterns-1])[#matches(pattern[num_patterns-1])-1] |
-            ----------------------------------------------------------------------------------------------------------------
+            -------------------------------------------------------------------------------------------------
+            | ... ... ... ... ... ... | match(pattern[num_patterns-1])[#matches(pattern[num_patterns-1])-1] |
+            -------------------------------------------------------------------------------------------------
     computation_time : Time elapsed in computing periodic patterns
 */
 void write_result (
-        int *match_countss, 
+        int *match_counts, 
         int *matches, 
         double computation_time);
 

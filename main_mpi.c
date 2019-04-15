@@ -22,14 +22,14 @@ int main(int argc, char const *argv[])
 	}
 
 	//---------------------------------------------------------------------
-	int 	n;					// length of text (input)
-	char* 	text;				// text (input)
-	int 	num_patterns;		// #patterns to be searched in the text (input)
-	int* 	m_set;				// lengths of patterns in pattern_set (input)
-	int* 	p_set;				// periods of patterns in pattern_set (input)
-	char** 	pattern_set;		// set of patterns to be searched (input)
-	int* 	match_countss;	// #match of pattern_i in text (to be computed)
-	int* 	matches;			// set of all match of each pattern_i in text (to be computed)
+	int 	n;				// length of text (input)
+	char* 	text;			// text (input)
+	int 	num_patterns;	// #patterns to be searched in the text (input)
+	int* 	m_set;			// lengths of patterns in pattern_set (input)
+	int* 	p_set;			// periods of patterns in pattern_set (input)
+	char** 	pattern_set;	// set of patterns to be searched (input)
+	int* 	match_counts;	// #match of pattern_i in text (to be computed)
+	int* 	matches;		// set of all match of each pattern_i in text (to be computed)
 	//---------------------------------------------------------------------
 
 	double start_time, end_time;
@@ -56,7 +56,7 @@ int main(int argc, char const *argv[])
 		m_set, 
 		p_set, 
 		pattern_set, 
-		&match_countss, 
+		&match_counts, 
 		&matches);
 
 	end_time = MPI_Wtime();
@@ -67,7 +67,7 @@ int main(int argc, char const *argv[])
 		checks for correctness of results computed by SVD and PCA
 		and outputs the results
 	*/
-	write_result(match_countss, matches, computation_time);
+	write_result(match_counts, matches, computation_time);
 
 	return 0;
 }
