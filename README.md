@@ -15,8 +15,8 @@ Refer to respective files for furthur details.
 mpicc -lm main_mpi.c lab4_mpi.c lab4_io.c -o ppm
 ```
 #### Command Line Arguments
-The program takes two command line arguments:
-- arg1: input filename (consist text and patterns)  
+The program takes one command line arguments:
+- arg: input filename (consist text and patterns)  
 
 To run the program:
 ```
@@ -46,8 +46,8 @@ The first line of the input file contains `n` followed by `num_patterns`. The se
 
 #### Output Specification
 Your program should find all the matches of all the patterns in the given text and store the results in the variables given in the program. We will check the correctness by calling the functions from the program. You should compute following:  
-- match_counts : #match of pattern_i in text
-- matches : set of all matches of each pattern_i in text
+- match_counts : #match of `pattern[i]` in text
+- matches : set of all matches of each `pattern[i]` in text
 
 Refer to `lab4_mpi.h` for more details. **Your program should not output anything on `stdout`.**  
 
