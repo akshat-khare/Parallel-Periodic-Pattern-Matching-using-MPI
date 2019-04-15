@@ -6,7 +6,7 @@
 
 /*
 	Arguments:
-		arg1: input filename (consist text, pattern_set)
+		arg: input filename (consist text, pattern_set)
 */
 
 int main(int argc, char const *argv[])
