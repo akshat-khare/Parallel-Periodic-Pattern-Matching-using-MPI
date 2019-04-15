@@ -24,20 +24,20 @@ Arguments:
             -----------------------------------------------------------
             | pattern[0] | pattern[1] | ... | pattern[num_patterns-1] |
             -----------------------------------------------------------
-    match_countss : 1D integer array containing number of match of each pattern in text (output)
+    match_countes : 1D integer array containing number of match of each pattern in text (output)
            #elements in ocuurance_count = num_patterns
             --------------------------------------------------------------------------------------------------
             | #matches(pattern[0]) | #matches(pattern[1]) | ... | #matches(pattern[num_patterns-1]) |
             --------------------------------------------------------------------------------------------------
-    matches : 1D array of integers containg list of all match (start index of) of pattern_i in text (output)
+    matches : 1D array of integers containing list of all matches (start index of) of pattern_i in text (output)
             consider index of text starting from 0 (not 1)
-            ----------------------------------------------------------------------------------------------------------------
-            | match(pattern[0])[0] | match(pattern[0])[1] | ... | match(pattern[0])[#matches(pattern[0])-1] |
-            ----------------------------------------------------------------------------------------------------------------
-            | match(pattern[1])[0] | match(pattern[1])[1] | ... | match(pattern[1])[#matches(pattern[1])-1] |
-            ----------------------------------------------------------------------------------------------------------------
-            | ... ... ... ... ...             | match(pattern[num_patterns-1])[#matches(pattern[num_patterns-1])-1] |
-            ----------------------------------------------------------------------------------------------------------------
+            ---------------------------------------------------------------------------------------------------------
+            | match(pattern[0])[0] | match(pattern[0])[1] | ...     ... | match(pattern[0])[#matches(pattern[0])-1] |
+            ---------------------------------------------------------------------------------------------------------
+            | match(pattern[1])[0] | match(pattern[1])[1] | ...     ... | match(pattern[1])[#matches(pattern[1])-1] |
+            ---------------------------------------------------------------------------------------------------------
+            | ... ... ... ... ...         ... | match(pattern[num_patterns-1])[#matches(pattern[num_patterns-1])-1] |
+            ---------------------------------------------------------------------------------------------------------
 */
 void periodic_pattern_matching (
 		int n, 
