@@ -35,7 +35,7 @@ def randomString(stringLength):
 n 			 = 10000	# length of text
 num_patterns = 10		# number of patterns to be searched
 min_p 		 = 2		# minimum period length
-min_m		 = 100		# minimum pattern length
+min_m		 = 5		# minimum pattern length
 
 
 m_set = []
@@ -60,7 +60,7 @@ file.write('\n')
 
 # generate and write period length of patterns
 for i in range(num_patterns):
-	p = random.randint(min_p, m_set[i]/2)
+	p = random.randint(min_p, m_set[i]//2)
 	p_set.append(p)
 	file.write(str(p) + ' ')
 file.write('\n')
@@ -68,7 +68,7 @@ file.write('\n')
 # generate and write patterns
 for i in range(num_patterns):
 	period_str = randomString(p_set[i])
-	pattern = period_str * (m_set[i] / p_set[i])
+	pattern = period_str * (m_set[i] // p_set[i])
 	pattern = pattern + period_str[0 : (m_set[i]-len(pattern))]
 	file.write(pattern + '\n')
 
