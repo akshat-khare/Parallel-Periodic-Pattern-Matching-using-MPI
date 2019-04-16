@@ -1,26 +1,26 @@
 #!/usr/bin/python3
 
 #########################################################################
-# Generate the input file containing text and pattern in required 		#
-# format and save to file named testcase_<n>_<num_patterns>				#
-#                       												#
+# Generate the input file containing text and pattern in required       #
+# format and save to file named testcase_<n>_<num_patterns>             #
+#                                                                       #
 # Parameters:                                                           #
-#   n 				:length of text										#
-#   num_patterns	:number of patterns to be searched					#
-#	min_p			:minimum period length								#
-#   min_m			:minimum period length								#
+#   n               :length of text                                     #
+#   num_patterns    :number of patterns to be searched                  #
+#   min_p           :minimum period length                              #
+#   min_m           :minimum period length                              #
 # Format of output file:                                                #
 #   -----------------------------------------------------------------   #
-#   | n num_patterns													#
-#	| text																#
-#	| m[0] m[1] m[2] ... m[num_patterns-1]								#
-#	| p[0] p[1] p[2] ... p[num_patterns-1]								#
-#	| pattern[0]														#
-#	| pattern[1]														#
-#	| ...																#
-#	| pattern[num_pattern-1]											#
-#   -----------------------------------------------------------------	#
-# 																		#
+#   | n num_patterns                                                    #
+#   | text                                                              #
+#   | m[0] m[1] m[2] ... m[num_patterns-1]                              #
+#   | p[0] p[1] p[2] ... p[num_patterns-1]                              #
+#   | pattern[0]                                                        #
+#   | pattern[1]                                                        #
+#   | ...                                                               #
+#   | pattern[num_pattern-1]                                            #
+#   -----------------------------------------------------------------   #
+#                                                                       #
 #########################################################################
 
 import random
@@ -32,10 +32,10 @@ def randomString(stringLength):
     return ''.join(random.choice(letters) for i in range(stringLength))
 
 # adjust these parameters to generate testcases
-n 			 = 10000	# length of text
-num_patterns = 10		# number of patterns to be searched
-min_p 		 = 2		# minimum period length
-min_m		 = 5		# minimum pattern length
+n            = 10000    # length of text
+num_patterns = 10       # number of patterns to be searched
+min_p        = 2        # minimum period length
+min_m        = 5        # minimum pattern length
 
 
 m_set = []
