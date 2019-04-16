@@ -31,7 +31,7 @@ Arguments:
             -----------------------------------------------------------------------------------------
     matches : 1D array of integers containing list of all matches (start index of) of pattern_i in text (output)
             consider index of text starting from 0 (not 1)
-            #elements in matches = sum(match_countes)
+            #elements in matches = sum(match_counts)
             -------------------------------------------------------------------------------------------------
             | match(pattern[0])[0] | match(pattern[0])[1] | ... | match(pattern[0])[#matches(pattern[0])-1] |
             -------------------------------------------------------------------------------------------------
