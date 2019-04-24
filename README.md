@@ -11,8 +11,13 @@ Refer to respective files for further details.
 **Do not change the directory structure and prototype of functions.**
 
 ## Building and Executing
+If you are using `c`, compile your code as follows:
 ```
 mpicc -lm main_mpi.c lab4_mpi.c lab4_io.c -o ppm
+```
+If you are using `c++`, compile your code as follows:
+```
+mpic++ -lm main_mpi.c lab4_mpi.cpp lab4_io.c -o ppm
 ```
 #### Command Line Arguments
 The program takes one command line arguments:
