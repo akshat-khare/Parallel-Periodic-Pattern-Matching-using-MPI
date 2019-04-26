@@ -25,11 +25,11 @@ The program takes one command line arguments:
 
 To run the program:
 ```
-mpirun -np 4 ppm <input filename>
+mpirun -np 4 ./ppm <input filename>
 ```
 Example:
 ```
-mpirun -np 4 ppm testcase/testcase_10000_10
+mpirun -np 4 ./ppm ./testcase/testcase_10000_10
 ```
 
 ## Generating testcases
