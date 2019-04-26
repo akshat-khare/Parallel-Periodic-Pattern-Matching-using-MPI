@@ -35,16 +35,14 @@ int main(int argc, char *argv[])
 	double start_time, computation_time, total_time;
 	int id;
 
-	MPI_Init(&argc, &argv);
-	MPI_Comm_rank(MPI_COMM_WORLD, &id);
-
 	/*
 		-- Pre-defined function --
 		reads input text and patterns from input file and creats array text, m_set, p_set and pattern_set
 	    see lab4_io.h for details
 	*/
-	if (id == 0)
-		read_data (argv[1], &n, &text, &num_patterns, &m_set, &p_set, &pattern_set);
+	read_data (argv[1], &n, &text, &num_patterns, &m_set, &p_set, &pattern_set);
+
+	MPI_Init(&argc, &argv);
 
 	start_time = MPI_Wtime();
 	
@@ -67,6 +65,7 @@ int main(int argc, char *argv[])
 	
 	MPI_Reduce(&computation_time, &total_time, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
 	
+	MPI_Comm_rank(MPI_COMM_WORLD, &id);
 	if (id == 0) {
 		/*
 		--Pre-defined function --
