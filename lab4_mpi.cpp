@@ -137,27 +137,27 @@ void np_text_analysis(int n, char * text, int lenpchar, char * pchar,int witness
 }
 
 void periodic_pattern_matching_single(int n, char * text, int m, int p, char * pattern, int * nummatches, int ** matchinfo){
-	printf("p is %d\n",p);
-	printf("m is %d\n",m);
-	printf("n is %d\n",n);
+	// printf("p is %d\n",p);
+	// printf("m is %d\n",m);
+	// printf("n is %d\n",n);
 	char * pdash = (char *)malloc(sizeof(char) * (2*p-1));
 	for(int i=0;i<=2*p-2;i++){
 		pdash[i]=pattern[i];
 	}
 	int * witnessarr = (int *)malloc(sizeof(int)*p);
 	witness(2*p-1, pdash, &witnessarr);
-	printf("witness arr is\n");
-	printarrayint(p,witnessarr);
+	// printf("witness arr is\n");
+	// printarrayint(p,witnessarr);
 	int lenpos;
 	int * pos;
 	np_text_analysis(n, text,2*p-1, pdash,p, witnessarr,&lenpos, &pos);
-	printf("algo 1 identified of length %d\n",lenpos);
-	printarrayint(lenpos, pos);
+	// printf("algo 1 identified of length %d\n",lenpos);
+	// printarrayint(lenpos, pos);
 	char * u = (char *)malloc(sizeof(char)*(p));
 	for(int i=0;i<=p-1;i++){
 		u[i]=pattern[i];
 	}
-	printf("u is %s of length %d\n",u, p);
+	// printf("u is %s of length %d\n",u, p);
 	int k = m/p;
 
 	char * v =(char *)malloc(sizeof(char)*(m - k*p));
@@ -165,7 +165,7 @@ void periodic_pattern_matching_single(int n, char * text, int m, int p, char * p
 	for(int i=tempint;i<=m-1;i++){
 		v[i-tempint] = pattern[i];
 	}
-	printf("v is %s of length %d\n",v, m - k*p);
+	// printf("v is %s of length %d\n",v, m - k*p);
 	char * u2v = (char *)malloc(sizeof(char) * (p*2 + m- k*p));
 	for(int i=0;i<p;i++){
 		u2v[i]=u[i];
@@ -178,7 +178,7 @@ void periodic_pattern_matching_single(int n, char * text, int m, int p, char * p
 	for(int i=0;i<m-k*p;i++){
 		u2v[i+tempint]=v[i];
 	}
-	printf("u2v is %s of length %d\n",u2v, p*2 + m- k*p);
+	// printf("u2v is %s of length %d\n",u2v, p*2 + m- k*p);
 	int * M = (int *)malloc(sizeof(int) * (n));
 	for(int i=0;i<=n-1;i++){
 		M[i]=0;
@@ -205,8 +205,8 @@ void periodic_pattern_matching_single(int n, char * text, int m, int p, char * p
 		}
 		M[i]=1;
 	}
-	printf("M is\n");
-	printarrayint(n,M);
+	// printf("M is\n");
+	// printarrayint(n,M);
 	int ** S = (int **)malloc(sizeof(int *)*p);
 	int ** C = (int **)malloc(sizeof(int *)*p);
 
@@ -299,11 +299,12 @@ void periodic_pattern_matching (
 		int **match_counts, 
 		int **matches)
 {
-	printf("text is %s\n",text);
-	printf("patterns are\n");
-	for(int i=0;i<num_patterns;i++){
-		printf("%s\n",pattern_set[i]);
-	}
+	printf("start\n");
+	// printf("text is %s\n",text);
+	// printf("patterns are\n");
+	// for(int i=0;i<num_patterns;i++){
+	// 	printf("%s\n",pattern_set[i]);
+	// }
 	*match_counts = (int *)malloc(sizeof(int)*num_patterns);
 	int ** matches2d = (int **)malloc(sizeof(int *)*num_patterns);
 	for(int i=0;i<num_patterns;i++){
@@ -329,5 +330,6 @@ void periodic_pattern_matching (
 		free(matches2d[i]);
 	}
 	free(matches2d);
+	// return ;
 
 }
